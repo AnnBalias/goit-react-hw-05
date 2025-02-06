@@ -1,26 +1,23 @@
-// import components
-import Profile from './components/Profile/Profile';
-import FriendList from './components/FriendList/FriendList';
-import TransactionHistory from './components/TransactionHistory/TransactionHistory';
-// import json
-import userData from "./userData.json";
-import friends from "./friends.json";
-import transactions from "./transactions.json";
+import { Route, Routes } from 'react-router-dom';
+// import pages
+import Home from './pages/Home/Home';
+import About from './pages/About/About';
+import NotFound from './pages/NotFound/NotFound';
+//
+import Header from './components/Header/Header';
 // import styles
 import './App.css'
+
 
 const App = () => {
   return (
     <>
-      <Profile
-        name={userData.username}
-        tag={userData.tag}
-        location={userData.location}
-        image={userData.avatar}
-        stats={userData.stats}
-      />
-      <FriendList friends={ friends } />
-      <TransactionHistory items={transactions} />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 };
