@@ -1,0 +1,19 @@
+.errorBox {
+    padding: 0 15px 13px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: dimgray;
+}
+
+.errorMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+.errorSpan {
+    text-transform: uppercase;
+    font-size: 28px;
+}

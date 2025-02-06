@@ -1,0 +1,3 @@
+import axios from "axios";
+
+const API_RAT = `eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkODhmY2RiODYwOWI3Nzg5YTk1ODFjMDhiMjlhOWZhYyIsIm5iZiI6MTczODg1NjkyMC4wNzUsInN1YiI6IjY3YTRkOWQ4MWZjYmZlZTU0ZDJmZGU3NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.U9rU9EivZiOMBL__v_DFIaCswxK8kT6C_JM3xXb-tQg`;
