@@ -1,0 +1,31 @@
+.tablBox {
+    width: 400px;
+    font-size: 14px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.tablHed {
+    background-color: rgb(29, 29, 31);
+    color: aliceblue;
+    font-weight: 100;
+}
+
+.tablHedItem {
+    padding: 4px;
+    border: 1px solid #000000;
+}
+
+.tablBodyLight {
+    background-color: rgb(219, 219, 231);
+}
+
+.tablBodyDark {
+    background-color: rgb(183, 183, 193);  
+}
+
+.tablBodyItem {
+    text-align: center;
+    padding: 4px;
+    border: 1px solid #000000;
+}

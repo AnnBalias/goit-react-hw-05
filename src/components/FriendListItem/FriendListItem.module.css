@@ -1,0 +1,28 @@
+.FriendItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.FriendImg {
+    margin-bottom: 12px;
+}
+
+.FriendName {
+    margin-bottom: 4px;
+}
+
+.FriendStatus {
+    font-size: 12px;
+}
+
+.FriendOnline {
+    color: green;
+}
+
+.FriendOffline {
+    color: red;
+}
