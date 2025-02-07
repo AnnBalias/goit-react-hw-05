@@ -11,18 +11,18 @@ const MovieList = ({ films }) => {
             {films.map(film => {
                 return (
                     <li key={film.id} className={css.item}>
+                        <Link
+                            to={`/movies/${film.id}`}
+                            state={location}
+                            className={css.title}
+                        >
                         <img
                             src={`https://image.tmdb.org/t/p/w500${film.poster_path}`} 
                             alt={film.title}
                             width="150px" 
                             className={css.img}
                         />
-                        <Link
-                            to={`/movies/${film.id}`}
-                            state={location}
-                            className={css.title}
-                        >
-                            {film.title}
+                        <p className={css.name}>{film.title}</p>
                         </Link>
                     </li>
                 )

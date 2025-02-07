@@ -1,3 +1,37 @@
+.goBack {
+    display: inline-block;
+    text-decoration: none;
+    background-color: rgb(20, 20, 20);
+    color: rgb(245, 245, 245);
+    border-radius: 10px;
+    padding: 12px;
+    margin: 12px;
+    
+    &:hover {
+        color: rgb(70, 70, 255);
+    }
+}
+
+.infoBox {
+    display: flex;
+    gap: 18px;
+    margin: 0 12px 12px 12px;
+}
+
+.img {
+    border-radius: 12px;
+}
+
+.title {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+
+
+
+
+
 .link {
     text-decoration: none;
 }

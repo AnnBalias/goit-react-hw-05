@@ -25,6 +25,10 @@
     margin-bottom: 8px;
 }
 
+.name {
+    text-align: center;
+}
+
 .title {
     text-decoration: none;
     color: rgb(20, 20, 20);;
