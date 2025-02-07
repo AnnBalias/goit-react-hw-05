@@ -1,30 +1,37 @@
-import { NavLink, Outlet, useLocation, useSearchParams } from "react-router-dom";
-import clsx from "clsx";
-import css from "./MoviesPage.module.css"
-import SearchBar from "../../components/SearchBar/SearchBar";
 import { useEffect, useState } from "react";
-import { getSearchMovie } from "../../tmdb";
+import { useSearchParams } from "react-router-dom";
+import clsx from "clsx";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import MovieList from "../../components/MovieList/MovieList";
+import { getSearchMovie } from "../../tmdb";
+import css from "./MoviesPage.module.css"
 
 const MoviesPage = () => {
 
     const [searchFilms, setSearchFilms] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [data, setData] = useState({})
     const searchQuery = searchParams.get("query") ?? "";
+    const [load, setLoad] = useState(false);
+    const [error, setError] = useState(false);
  
 
     useEffect(() => {
-if (!searchQuery) return;
-
+        if (!searchQuery) return;
 
         const SearchMovie = async () => {
             try {
+                setLoad(true)
+                setError(false)
                 const getFilms = await getSearchMovie(searchQuery);
+                if (!getFilms) {
+                    setError(true);
+                    return
+                }
                 setSearchFilms(getFilms.results);
-                setData(getFilms);
             } catch (error) {
-                console.error("Error fetching movies:", error);
+                setError(true);
+            } finally {
+                setLoad(false)
             }
         };
         SearchMovie();
@@ -40,7 +47,7 @@ if (!searchQuery) return;
         };
 
     return (
-        <div>
+        <div className={css.page}>
             <SearchBar handSearch={handSearch} />
             <MovieList films={searchFilms} />
         </div>

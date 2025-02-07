@@ -9,10 +9,10 @@ const buildLinkClass = ({isActive}) => {
 
 const Navigation = () => {
     return (
-        <header>
-            <nav>
-                <ul>
-                    <li>
+        <header className={css.header}>
+            <nav className={css.nav}>
+                <ul className={css.navList}>
+                    <li className={css.navLink}>
                         <NavLink to="" className={buildLinkClass}>
                             Home
                         </NavLink>

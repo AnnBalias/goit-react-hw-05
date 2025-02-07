@@ -2,32 +2,42 @@ import { useState, useEffect } from 'react';
 import MovieList from "../../components/MovieList/MovieList";
 import { getTrendToday } from "../../tmdb.js";
 import css from "./HomePage.module.css"
-import { useLocation } from 'react-router-dom';
+import ErrorMessage from '../../components/ErrorMessage/ErrorMessage.jsx';
 
 const HomePage = () => {
     const [topFilms, setTopFilms] = useState([]);
-  
+    const [load, setLoad] = useState(false);
+    const [error, setError] = useState(false);
     
     useEffect(() => {
         const getFilms = async () => {
-            const films = await getTrendToday();
-            setTopFilms(films);
+            try {
+                setLoad(true)
+                setError(false)
+                const films = await getTrendToday();
+                if (!films) {
+                    setError(true);
+                    return
+                }
+                setTopFilms(films);
+            } catch (error) {
+                setError(true);
+            } finally {
+                setLoad(false)
+            }
         };
         getFilms();
     }, []);
     
-    if (!topFilms) {
-        return <h2>Loadind...</h2>
-    }
-
     return (
         <div>
-            <h1>Trending today</h1>
-            <MovieList films={topFilms} />
+            
+            {load && <p className={css.load}>Loadind...</p>}
+            {error ? <ErrorMessage /> : <div className={css.movieBox}>
+                <h1 className={css.title}>Trending today</h1>
+                <MovieList films={topFilms} /></div>}
         </div>
     )
 }
 
 export default HomePage;
-
-// top day

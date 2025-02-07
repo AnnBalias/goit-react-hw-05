@@ -1,0 +1,25 @@
+.headerForm {
+    width: 200px;
+    display: flex;
+    flex-direction: reverse;
+    align-items: center;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 25px;
+    margin: 16px;
+}
+
+.formInp {
+    border: none;
+    background-color: transparent;
+    width: 165px;
+}
+
+.formBtn {
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
