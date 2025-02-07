@@ -1,8 +1,19 @@
+import { Link } from "react-router-dom";
 import css from "./MovieList.module.css"
 
-const MovieList = () => {
+const MovieList = ({ films }) => {
     return (
-        <p>MovieList</p>
+        <ol>
+            {films.map(film => {
+                return (
+                    <li key={film.id}>
+                        <Link to={`/movies/${film.id}`}>
+                            {film.title}
+                        </Link>
+                    </li>
+                )
+            })}
+        </ol>
     )
 }
 
