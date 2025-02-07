@@ -7,7 +7,7 @@ const MovieCast = () => {
 
     const { movieId } = useParams();
     const [cast, setCast] = useState([]);
-
+     
     useEffect(() => {
         const getCast = async () => {
             const getcast = await getMovieCast(movieId);
@@ -18,7 +18,6 @@ const MovieCast = () => {
 
     // console.log(cast);
 
-    
     return (
         <ul>
             {cast.map((person) => <li key={person.id}>

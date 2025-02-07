@@ -27,7 +27,12 @@ export const getMovieCast = async (movieId) => {
   return data.cast;
 };
 
-// export const getMovieRev = async (movieId) => {
-//   const response = await axiosInstance.get(`/movie/${movieId}/reviews`);
-//   return response.data.results;
-// };
+export const getMovieRev = async (movieId) => {
+  const response = await axiosInstance.get(`/movie/${movieId}/reviews`);
+  return response.data.results;
+};
+
+export const getSearchMovie = async (search) => {
+  const { data } = await axiosInstance.get(`/search/movie?query=${search}`);
+  return data;
+};
