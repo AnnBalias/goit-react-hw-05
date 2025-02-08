@@ -1,11 +1,12 @@
 .header {
     width: 100%;
-    background-color: rgb(20, 20, 20);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 12px;
 }
 
 .navList {
+    width: 100%;
+    background-color: rgb(20, 20, 20);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 12px;
     display: flex;
     gap: 12px;
 }

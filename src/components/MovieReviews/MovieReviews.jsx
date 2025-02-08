@@ -18,10 +18,10 @@ const MovieReviews = () => {
     }, [movieId]);
 
     return (
-        <ul>
-            {reviews.map((rev) => <li key={rev.id}>
-                {rev.author}
-                {rev.url}
+        <ul className={css.list}>
+            {reviews.map((rev) => <li key={rev.id}  className={css.item}>
+                <p className={css.author}>{rev.author}</p>
+                <a href={rev.url}  className={css.link}>{rev.url}</a>
                 </li> 
             )}
             

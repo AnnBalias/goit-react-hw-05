@@ -16,12 +16,16 @@ const MovieCast = () => {
         getCast();
     }, [movieId]);
 
-    // console.log(cast);
-
     return (
-        <ul>
-            {cast.map((person) => <li key={person.id}>
-                    {person.name}
+        <ul className={css.list}>
+            {cast.map((person) => <li key={person.id} className={css.item}>
+                <img
+                    src={`https://image.tmdb.org/t/p/w500${person.profile_path}`} 
+                    alt={person.name}
+                    width={"100px"}
+                    className={css.photo}
+                />
+                <p className={css.name}>{person.name}</p>
                 </li> 
             )}
             
